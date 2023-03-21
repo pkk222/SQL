@@ -1,0 +1,37 @@
+-- Create a grocery store database 
+
+
+CREATE TABLE drinks (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, year_release INTEGER, price INTEGER);
+
+INSERT INTO drinks VALUES (1, "Bananas", 4, 1994, 40);
+INSERT INTO drinks VALUES (2, "Peanut Butter", 2, 1995, 45);
+INSERT INTO drinks VALUES (3, "Dark Chocolate Bars", 5,1996, 46);
+INSERT INTO drinks VALUES (4, "Blue chocolate Bars", 6,1997, 47);
+INSERT INTO drinks VALUES (5, "White Chocolate Bars", 8,1998, 47);
+INSERT INTO drinks VALUES (6, "Ice cream Bars", 5,1996, 46);
+INSERT INTO drinks VALUES (7, "White Ice cream Bars", 5,1996, 46);
+INSERT INTO drinks VALUES (8, "Dark Chocolate Bars", 5,1996, 46);
+INSERT INTO drinks VALUES (9, "Dark Chocolate Bars", 5,1996, 46);
+INSERT INTO drinks VALUES (10, "Dark Chocolate Bars", 5,1996, 46);
+INSERT INTO drinks VALUES (11, "Dark Chocolate Bars", 5,1996, 46);
+INSERT INTO drinks VALUES (12, "Dark Chocolate Bars", 5,1996, 46);
+INSERT INTO drinks VALUES (13, "Dark Chocolate Bars", 5,1996, 46);
+INSERT INTO drinks VALUES (14, "Dark Chocolate Bars", 5,1996, 46);
+INSERT INTO drinks VALUES (15, "Dark Chocolate Bars", 5,1996, 46);
+
+--display the database ordered by price.
+SELECT * FROM drinks
+ORDER BY price desc;
+
+--what are the most 5 expensive items? 
+SELECT item, price
+
+--What is the total quantity of items?
+SELECT SUM(QUANTITY) FROM drinks; 
+
+--When was each item released? 
+SELECT * FROM drinks;
+SELECT year_release FROM drinks; 
+SELECT SUM(QUANTITY)FROM drinks; 
+
+
