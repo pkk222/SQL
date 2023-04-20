@@ -1,0 +1,48 @@
+#Below are potential answers to the questions in the final SQL project. 
+
+#1 List Customers (their full names, customer ID, and country) who are in the USA, and who are not in the USA
+
+--country is USA
+SELECT FirstName, LastName, CustomerId, Country
+From chinook.customers
+Where country ="USA";
+
+--country is NOT USA 
+SELECT FirstName, LastName, CustomerId, Country
+From chinook.customers
+Where country !="USA";
+
+#2 Show how many Customers where from the USA
+SELECT count (country), country
+From chinook.customers
+Where Country='USA';
+
+#3. Find the Invoices of customers who are from the USA. 
+SELECT cust.FirstName, cust.LastName, inv.InvoiceID, inv.BillingCountry, inv.InvoiceDate
+From chinook.invoices as inv
+LEFT JOIN chinook.customers as cust
+on inv.CustomerID=cust.CustomerId
+where inv.BillingCountry="USA";
+
+#4. Show the Employeers who are IT Staff
+SELECT * FROM chinook.Employees
+WHERE Title= "IT Staff";
+
+#5. Find distinct list of billing countries from the Invoice table. 
+SELECT distinct BillingCountry FROM chinook.invoices;
+
+#6. Provide a query that determines the invoices that are associated with each sales agent. 
+SELECT emp. LastName, emp.FirstName, inv.InvoiceId
+From chinook.Employees emp
+Join chinook.Customers cust on cust.SupportRepId=emp.EmployeeID
+Join chinook.Invoices Inv on Inv.CustomerId=Cust.CustomerID;
+
+#7. How many Invoices were there in 2009? 
+SELECT count (*) from chinook.invoices
+Where InvoiceDate BETWEEN '2009-01-01' and '2009-12-31';
+
+#8. What was the total sales for 2010? 
+SELECT sum (total) from chinook.invoices
+Where InvoiceDate BETWEEN '2010-01-01' and '2010-12-31'
+
+#9. 
